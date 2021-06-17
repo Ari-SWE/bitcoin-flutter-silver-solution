@@ -39,7 +39,7 @@ class CoinData {
   //3: Update getCoinData to take the selectedCurrency as an input.
   Future getCoinData(String selectedCurrency) async {
     //4: Update the URL to use the selectedCurrency input.
-    String requestURL = '$bitcoinAverageURL/BTC$selectedCurrency';
+    String requestURL = '$bitcoinAverageURL/BTC/$selectedCurrency?apikey=';
     http.Response response = await http.get(requestURL);
     if (response.statusCode == 200) {
       var decodedData = jsonDecode(response.body);
